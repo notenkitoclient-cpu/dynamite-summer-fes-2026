@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- #5: SEO -->
+        <meta
+            name="description"
+            content="毎年7月海の日の3連休に函館グリーンプラザで開催！道南最大級のエンターテインメントフェス「ダイナマイトサマーフェス2026」。音楽・ダンス・グルメが大集結。2026年7月18日〜20日。入場無料。"
+        />
+
+        <!-- #5: OGP -->
+        <meta
+            property="og:title"
+            content="DYNAMITE SUMMER FES 2026 | 函館エンタメフェス"
+        />
+        <meta
+            property="og:description"
+            content="2026年7月18日(土)〜20日(月・祝)、はこだてグリーンプラザにて開催！道南最大級の夏フェス。音楽・ダンス・グルメが大集結！入場無料！"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hakodate-summerfes.com/" />
+        <meta
+            property="og:image"
+            content="https://hakodate-summerfes.com/ogp.jpg"
+        />
+        <meta property="og:locale" content="ja_JP" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="DYNAMITE SUMMER FES 2026 | 函館エンタメフェス"
+        />
+        <meta
+            name="twitter:description"
+            content="2026年7月18日〜20日、はこだてグリーンプラザで開催！入場無料！"
+        />
+        <meta
+            name="twitter:image"
+            content="https://hakodate-summerfes.com/ogp.jpg"
+        />
+
+        <!-- #5: theme-color & favicon -->
+        <meta name="theme-color" content="#ff4500" />
+        <link rel="icon" href="favicon.ico" />
+
+        <title>DYNAMITE SUMMER FES 2026 | 函館エンタメフェス</title>
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --primary-color: #ff4500;
+                --primary-dark: #cc3700;
+                --secondary-color: #ffd700;
+                --accent-color: #00ffff;
+                --bg-color: #050505;
+                --card-bg: #1a1a1a;
+                --line-color: #06c755;
+                --font-main:
+                    "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+                    "Hiragino Sans", Meiryo, sans-serif;
+                --shadow-fire:
+                    0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: var(--font-main);
+                margin: 0;
+                padding: 0;
+                background-color: var(--bg-color);
+                color: #fff;
+                line-height: 1.8;
+                overflow-x: hidden;
+            }
+
+            /* #9: prefers-reduced-motion */
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+                html {
+                    scroll-behavior: auto;
+                }
+            }
+
+            /* Loading Screen */
+            #loader-wrapper {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                z-index: 9999;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition:
+                    opacity 1s,
+                    visibility 1s;
+            }
+            #loader-wrapper.loaded {
+                opacity: 0;
+                visibility: hidden;
+            }
+            .loader-title {
+                font-size: 5rem;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                color: #fff;
+                text-align: center;
+                text-shadow:
+                    0 0 15px var(--primary-color),
+                    0 0 30px var(--primary-color),
+                    0 0 45px var(--secondary-color);
+                animation: loader-burst 1s ease-out forwards;
+            }
+            .loader-dates {
+                font-size: 1.5rem;
+                color: var(--secondary-color);
+                margin-top: 20px;
+                animation: fade-in 1s 1.5s forwards;
+                opacity: 0;
+            }
+
+            @keyframes loader-burst {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+                50% {
+                    transform: scale(1.2) rotate(5deg);
+                    opacity: 1;
+                    text-shadow: 0 0 50px white;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            /* ヘッダー */
+            header {
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 1rem 2rem;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                box-sizing: border-box;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid var(--primary-color);
+                transition: background 0.3s;
+            }
+            header.scrolled {
+                background-color: black;
+                box-shadow: 0 2px 20px var(--primary-color);
+            }
+            header h1 {
+                margin: 0;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            header h1 span {
+                color: var(--primary-color);
+                animation: neon-flicker-slow 3s infinite;
+            }
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+            }
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+            nav a:hover {
+                color: var(--secondary-color);
+            }
+
+            /* #1: ハンバーガーボタン */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 44px;
+                height: 44px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding: 0;
+                z-index: 1100;
+            }
+            .hamburger span {
+                display: block;
+                width: 28px;
+                height: 3px;
+                background-color: #fff;
+                border-radius: 2px;
+                transition:
+                    transform 0.3s,
+                    opacity 0.3s;
+                margin: 4px 0;
+            }
+            .hamburger.open span:nth-child(1) {
+                transform: translateY(11px) rotate(45deg);
+                background-color: var(--primary-color);
+            }
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.open span:nth-child(3) {
+                transform: translateY(-11px) rotate(-45deg);
+                background-color: var(--primary-color);
+            }
+
+            /* #1: モバイルナビオーバーレイ */
+            .mobile-nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.97);
+                z-index: 1050;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 35px;
+            }
+            .mobile-nav-overlay.open {
+                display: flex;
+            }
+            .mobile-nav-overlay a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.8rem;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                transition: color 0.2s;
+                border-bottom: 2px solid transparent;
+                padding-bottom: 5px;
+            }
+            .mobile-nav-overlay a:hover,
+            .mobile-nav-overlay a:focus {
+                color: var(--secondary-color);
+                border-bottom-color: var(--secondary-color);
+            }
+
+            /* Hero */
+            .hero {
+                min-height: 100vh;
+                padding: 120px 20px 60px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            #particles-js {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.8)
+                );
+                z-index: 2;
+            }
+            .hero-content {
+                position: relative;
+                z-index: 3;
+            }
+            .hero h2 {
+                font-size: 5rem;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: #fff;
+                text-shadow:
+                    0 0 10px var(--primary-color),
+                    0 0 20px var(--primary-color),
+                    0 0 30px var(--primary-color);
+                animation: title-pulse 1.5s infinite alternate;
+            }
+            .hero h2 span {
+                color: var(--secondary-color);
+            }
+            .hero .catchphrase {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+                font-weight: bold;
+                color: var(--secondary-color);
+                opacity: 0;
+                animation: fade-in 1s 1s forwards;
+            }
+            .hero .details {
+                font-size: 2rem;
+                font-weight: bold;
+                background: rgba(255, 69, 0, 0.3);
+                border: 2px solid var(--primary-color);
+                display: inline-block;
+                padding: 15px 30px;
+                border-radius: 50px;
+                box-shadow: var(--shadow-fire);
+                opacity: 0;
+                animation: fade-in 1s 1.5s forwards;
+            }
+            .hero-cta {
+                margin-top: 30px;
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                opacity: 0;
+                animation: fade-in 1s 2s forwards;
+            }
+
+            /* #13: LINEボタン */
+            .btn-line {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background-color: var(--line-color);
+                color: white;
+                padding: 14px 28px;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                font-size: 1rem;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.3s;
+                box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3);
+            }
+            .btn-line:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(6, 199, 85, 0.5);
+            }
+
+            /* コンテンツ共通 */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 100px 20px;
+            }
+            section {
+                margin-bottom: 150px;
+            }
+            h2.section-title {
+                text-align: center;
+                color: #fff;
+                font-size: 3rem;
+                text-transform: uppercase;
+                position: relative;
+                margin-bottom: 80px;
+                text-shadow: 0 0 10px var(--primary-color);
+            }
+            h2.section-title::after {
+                content: "";
+                position: absolute;
+                width: 150px;
+                height: 5px;
+                background-color: var(--primary-color);
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: var(--shadow-fire);
+            }
+
+            /* ABOUT */
+            .about-section {
+                position: relative;
+                padding: 80px 0;
+                border-radius: 20px;
+            }
+            .about-bg-fire {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    -45deg,
+                    #ee7752,
+                    #e73c7e,
+                    #23a6d5,
+                    #23d5ab
+                );
+                background-size: 400% 400%;
+                animation: gradient-fire 15s ease infinite;
+                border-radius: 20px;
+                z-index: 1;
+            }
+            .about-content {
+                position: relative;
+                z-index: 2;
+                background-color: rgba(0, 0, 0, 0.85);
+                padding: 60px;
+                border-radius: 15px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                margin: 0 20px;
+            }
+            .about-text {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+            .organizer-msg {
+                border-left: 5px solid var(--secondary-color);
+                background: rgba(255, 255, 255, 0.05);
+                padding: 20px;
+                border-radius: 0 10px 10px 0;
+            }
+            .organizer-msg h3 {
+                color: var(--secondary-color);
+                margin-top: 0;
+                font-size: 1.5rem;
+            }
+
+            /* ARTIST */
+            .artist-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .artist-card {
+                background-color: var(--card-bg);
+                border-radius: 15px;
+                border: 1px solid #333;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.3s ease;
+            }
+            @media (min-width: 768px) {
+                .artist-card {
+                    flex-direction: row;
+                }
+            }
+            .artist-card:hover {
+                border-color: var(--secondary-color);
+                box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            }
+            .artist-img {
+                width: 100%;
+                height: 300px;
+                background-color: #222;
+            }
+            @media (min-width: 768px) {
+                .artist-img {
+                    width: 40%;
+                    height: auto;
+                    min-height: 300px;
+                }
+            }
+            .artist-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .artist-info {
+                padding: 40px;
+                flex: 1;
+            }
+            .artist-name {
+                color: var(--secondary-color);
+                font-size: 2rem;
+                margin: 0 0 20px 0;
+                text-transform: uppercase;
+                border-bottom: 1px solid #444;
+                padding-bottom: 10px;
+            }
+            .artist-profile {
+                color: #ccc;
+                font-size: 1rem;
+                line-height: 1.8;
+                white-space: pre-line;
+            }
+            .artist-badge {
+                display: inline-block;
+                background: var(--primary-color);
+                color: white;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            .artist-card-cs {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 60px;
+                text-align: center;
+                background: linear-gradient(135deg, #111, #222);
+                border: 2px dashed var(--secondary-color);
+            }
+            .artist-card-cs h3 {
+                font-size: 3rem;
+                color: #fff;
+                text-shadow: 0 0 20px var(--secondary-color);
+                margin: 0;
+                animation: title-pulse 2s infinite;
+            }
+
+            /* #8: TICKET */
+            .ticket-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 30px;
+            }
+            .ticket-card {
+                background-color: var(--card-bg);
+                border-radius: 15px;
+                padding: 40px;
+                text-align: center;
+                border: 1px solid #333;
+                transition:
+                    border-color 0.3s,
+                    box-shadow 0.3s;
+            }
+            .ticket-card:hover {
+                border-color: var(--secondary-color);
+                box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+            }
+            .ticket-icon {
+                font-size: 2.8rem;
+                margin-bottom: 15px;
+            }
+            .ticket-card h3 {
+                color: var(--secondary-color);
+                font-size: 1.2rem;
+                margin: 0 0 10px;
+                text-transform: uppercase;
+            }
+            .ticket-price {
+                font-size: 2.8rem;
+                font-weight: bold;
+                color: #fff;
+                margin: 10px 0;
+                text-shadow: 0 0 10px var(--primary-color);
+            }
+            .ticket-price small {
+                font-size: 1rem;
+                color: #ccc;
+            }
+            .ticket-card p {
+                color: #ccc;
+                font-size: 0.95rem;
+                margin: 10px 0 0;
+            }
+            .ticket-note {
+                text-align: center;
+                color: #888;
+                margin-top: 40px;
+                font-size: 0.9rem;
+            }
+
+            /* SCHEDULE */
+            .schedule-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 50px;
+                flex-wrap: wrap;
+            }
+            .schedule-tab-btn {
+                background-color: #333;
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .schedule-tab-btn.active {
+                background-color: var(--primary-color);
+                box-shadow: var(--shadow-fire);
+            }
+            .schedule-content {
+                display: none;
+            }
+            .schedule-content.active {
+                display: block;
+                animation: fade-in 0.5s forwards;
+            }
+            .timetable {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                border-left: 4px solid #333;
+                padding-left: 20px;
+            }
+            .timetable-item {
+                margin-bottom: 40px;
+                position: relative;
+                background-color: var(--card-bg);
+                padding: 20px;
+                border-radius: 8px;
+                border: 1px solid #222;
+                cursor: pointer;
+                transition: border-color 0.3s;
+            }
+            .timetable-item::before {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: var(--primary-color);
+                border-radius: 50%;
+                left: -32px;
+                top: 20px;
+                box-shadow: var(--shadow-fire);
+                z-index: 2;
+            }
+            .timetable-item:hover {
+                border-color: var(--secondary-color);
+            }
+            .time {
+                color: var(--secondary-color);
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+            .event-title {
+                color: #fff;
+                font-size: 1.3rem;
+                margin-top: 5px;
+                margin-bottom: 0;
+                text-transform: uppercase;
+            }
+            /* #2/#3: expand は max-height トランジションで実装 */
+            .event-details {
+                color: #ccc;
+                overflow: hidden;
+                max-height: 0;
+                opacity: 0;
+                border-top: 1px solid transparent;
+                margin-top: 0;
+                transition:
+                    max-height 0.35s ease,
+                    opacity 0.35s ease,
+                    margin-top 0.35s ease,
+                    border-top-color 0.35s ease;
+            }
+            .timetable-item.active .event-details {
+                max-height: 300px;
+                opacity: 1;
+                margin-top: 10px;
+                border-top-color: #333;
+            }
+
+            /* RECRUITMENT */
+            .recruit-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 30px;
+            }
+            .recruit-card {
+                background-color: var(--card-bg);
+                padding: 40px;
+                border-radius: 15px;
+                border: 1px solid #333;
+                position: relative;
+                overflow: hidden;
+            }
+            .recruit-card h3 {
+                color: var(--secondary-color);
+                font-size: 1.5rem;
+                text-align: center;
+                border-bottom: 1px solid #444;
+                padding-bottom: 15px;
+                margin-top: 0;
+            }
+            .recruit-details {
+                margin-top: 20px;
+                color: #ddd;
+                font-size: 0.95rem;
+            }
+            .recruit-details dt {
+                font-weight: bold;
+                color: var(--primary-color);
+                margin-top: 15px;
+            }
+            .recruit-details dd {
+                margin: 5px 0 0 0;
+                padding-left: 10px;
+                border-left: 2px solid #555;
+            }
+
+            /* #4: cs-overlay — ::before で背景、::after でテキスト（\A で改行） */
+            .cs-overlay::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.87);
+                border-radius: 15px;
+                backdrop-filter: blur(3px);
+                z-index: 9;
+            }
+            .cs-overlay::after {
+                content: "2026年5月\A募集開始予定";
+                white-space: pre;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: var(--secondary-color);
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: center;
+                z-index: 10;
+                pointer-events: none;
+                width: 90%;
+                line-height: 2;
+            }
+
+            /* GALLERY */
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            .gallery-item {
+                height: 200px;
+                border-radius: 8px;
+                overflow: hidden;
+                cursor: pointer;
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+                position: relative;
+                background-color: #222;
+            }
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s;
+            }
+            .gallery-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            }
+            .gallery-item:hover img {
+                transform: scale(1.1);
+            }
+            .gallery-item::after {
+                content: "拡大";
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 0.8rem;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            .gallery-item:hover::after {
+                opacity: 1;
+            }
+
+            /* #3: モーダル — visibility/opacity で制御 */
+            #modal {
+                position: fixed;
+                z-index: 9999;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                visibility: hidden;
+                opacity: 0;
+                transition:
+                    opacity 0.3s,
+                    visibility 0.3s;
+            }
+            #modal.active {
+                visibility: visible;
+                opacity: 1;
+            }
+            #modal-img {
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 10px;
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            }
+            #modal-close {
+                position: absolute;
+                top: 30px;
+                right: 40px;
+                color: #fff;
+                font-size: 40px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: color 0.3s;
+                line-height: 1;
+            }
+            #modal-close:hover {
+                color: var(--primary-color);
+            }
+
+            /* #12: 過去年度アーカイブ */
+            .archive-section {
+                text-align: center;
+                padding: 60px 20px;
+                border-top: 1px solid #222;
+            }
+            .archive-section h3 {
+                color: #666;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+            }
+            .archive-links {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            .archive-link {
+                color: #555;
+                text-decoration: none;
+                border: 1px solid #333;
+                padding: 8px 22px;
+                border-radius: 30px;
+                font-size: 0.9rem;
+                transition: all 0.3s;
+            }
+            a.archive-link:hover {
+                color: var(--secondary-color);
+                border-color: var(--secondary-color);
+            }
+
+            /* フッター */
+            footer {
+                background-color: #000;
+                color: #666;
+                text-align: center;
+                padding: 60px 20px;
+                font-size: 1rem;
+                border-top: 2px solid var(--primary-color);
+            }
+            .footer-line {
+                margin-bottom: 25px;
+            }
+            .social-links {
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .social-links a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 0.95rem;
+                font-weight: bold;
+                border: 1px solid #444;
+                padding: 10px 20px;
+                border-radius: 30px;
+                transition: all 0.3s;
+            }
+            .social-links a:hover {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+                transform: translateY(-3px);
+            }
+
+            /* アニメーション */
+            @keyframes fade-in {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes expand {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes title-pulse {
+                from {
+                    text-shadow:
+                        0 0 10px var(--primary-color),
+                        0 0 20px var(--primary-color);
+                }
+                to {
+                    text-shadow:
+                        0 0 15px var(--primary-color),
+                        0 0 30px var(--secondary-color),
+                        0 0 40px var(--secondary-color);
+                }
+            }
+            @keyframes neon-flicker-slow {
+                0%,
+                19%,
+                21%,
+                23%,
+                25%,
+                54%,
+                56%,
+                100% {
+                    text-shadow: 0 0 5px var(--primary-color);
+                    opacity: 1;
+                }
+                20%,
+                24%,
+                55% {
+                    text-shadow: none;
+                    opacity: 0.8;
+                }
+            }
+            @keyframes gradient-fire {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .btn {
+                display: inline-block;
+                background: linear-gradient(
+                    45deg,
+                    var(--primary-color),
+                    #ff8c00
+                );
+                color: white;
+                padding: 15px 40px;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.3s;
+                box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+                border: none;
+                cursor: pointer;
+            }
+            .btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5);
+            }
+
+            @media (max-width: 768px) {
+                .hero h2 {
+                    font-size: 2.8rem;
+                }
+                h2.section-title {
+                    font-size: 2.2rem;
+                }
+                header nav {
+                    display: none;
+                }
+                /* #1: スマホ用ハンバーガー表示 */
+                .hamburger {
+                    display: flex;
+                }
+                .about-content {
+                    padding: 30px;
+                    margin: 0;
+                }
+                .schedule-tab-btn {
+                    padding: 10px 16px;
+                    font-size: 0.95rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="loader-wrapper">
+            <div class="loader-title">DYNAMITE 2026</div>
+            <div class="loader-dates">7.18 SAT - 7.20 MON</div>
+        </div>
+
+        <header>
+            <h1>DYNAMITE <span>SUMMER FES</span> 2026</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#artist">GUEST</a></li>
+                    <li><a href="#schedule">SCHEDULE</a></li>
+                    <li><a href="#ticket">TICKET</a></li>
+                    <li><a href="#recruitment">RECRUIT</a></li>
+                    <li><a href="#photo">GALLERY</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+            </nav>
+            <!-- #1: ハンバーガーボタン -->
+            <button
+                class="hamburger"
+                id="hamburger"
+                aria-label="メニューを開く"
+                aria-expanded="false"
+            >
+                <span></span><span></span><span></span>
+            </button>
+        </header>
+
+        <!-- #1: モバイルナビオーバーレイ -->
+        <nav
+            class="mobile-nav-overlay"
+            id="mobileNav"
+            role="navigation"
+            aria-label="モバイルナビ"
+        >
+            <a href="#about" class="mobile-nav-link">ABOUT</a>
+            <a href="#artist" class="mobile-nav-link">GUEST</a>
+            <a href="#schedule" class="mobile-nav-link">SCHEDULE</a>
+            <a href="#ticket" class="mobile-nav-link">TICKET</a>
+            <a href="#recruitment" class="mobile-nav-link">RECRUIT</a>
+            <a href="#photo" class="mobile-nav-link">GALLERY</a>
+            <a href="#access" class="mobile-nav-link">ACCESS</a>
+        </nav>
+
+        <div class="hero">
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <h2>DYNAMITE <span>SUMMER FES</span> 2026</h2>
+                <p class="catchphrase">
+                    今年もキタキタ！<br />みんなのやりたいこと<br />全部ぶち上げて最高の夏フェスにしよう！
+                </p>
+                <div class="details">
+                    2026.7.18 SAT - 7.20 MON<br />
+                    📍はこだてグリーンプラザ
+                </div>
+                <!-- #13: LINEボタン & チケットCTA -->
+                <div class="hero-cta">
+                    <a
+                        href="https://lin.ee/XXXXXXX"
+                        class="btn-line"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+                            />
+                        </svg>
+                        LINE 友達追加
+                    </a>
+                    <a href="#ticket" class="btn">入場情報を見る</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <section id="about" class="about-section" data-aos="fade-up">
+                <div class="about-bg-fire"></div>
+                <div class="about-content">
+                    <h2 class="section-title">ABOUT & HISTORY</h2>
+                    <div class="about-text">
+                        毎年7月海の日の3連休に、函館の街中で開催する道南最大級のエンターテインメントフェス！<br />
+                        音楽！ダンス！グルメ！みんながやりたい事を全部まとめて、最高の夏の思い出を一緒に作る！<br />それがダイナマイトサマーフェスです！
+                    </div>
+                    <div class="organizer-msg">
+                        <h3>主催者メッセージ</h3>
+                        <p>
+                            「楽しくなきゃイベントじゃない。」<br /><br />
+                            このシンプルな想いから、ダイナマイトサマーフェスは始まりました。函館という素晴らしい街で、年齢も性別も関係なく、誰もが心から笑って、熱狂できる場所を作りたい。<br /><br />
+                            回を重ねるごとに、参加してくれるダンサー、シンガー、キッチンカーの皆さん、そして何より会場に足を運んでくれる皆さんの熱気が、このフェスを成長させてくれました。<br /><br />
+                            2026年の夏も、函館グリーンプラザを舞台に、過去最高の熱量でお届けします。とにかく面白いこと、何でもやって楽しもうぜ！
+                        </p>
+                        <p
+                            style="
+                                text-align: right;
+                                color: var(--secondary-color);
+                                font-weight: bold;
+                                margin-top: 20px;
+                            "
+                        >
+                            ダイナマイトサマーフェス実行委員会
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="artist" data-aos="fade-up">
+                <h2 class="section-title">GUEST ARTIST</h2>
+                <p style="text-align: center; color: #ccc; margin-bottom: 50px">
+                    ※2026年の出演ゲストはCOMING
+                    SOON。以下は過去の熱狂を作ったスペシャルゲスト達です。
+                </p>
+
+                <div class="artist-grid">
+                    <div class="artist-card" data-aos="fade-up">
+                        <div class="artist-img">
+                            <img
+                                src="https://placehold.co/600x800/111/FFF?text=PAST+IMAGE:\nMark+Panther"
+                                alt="マーク・パンサー"
+                            />
+                        </div>
+                        <div class="artist-info">
+                            <span class="artist-badge">PAST SPECIAL GUEST</span>
+                            <h3 class="artist-name">マーク・パンサー</h3>
+                            <div class="artist-profile">
+                                フランス・マルセイユ出身。父親がフランス人で母親が日本人のハーフ。日本語、フランス語、英語のトライリンガル。
+                                日本音楽史に名を残すユニット「globe」のメンバーとして活躍。デビューアルバム「globe」は400万枚、アルバムはわずか3作品で1000万枚以上。230万枚を記録した「DEPARTURES」を始め、多数のメガヒットシングルをリリース。
+                                globeの活動と並行して、地元フランスにてDJ／プロデュース活動をスタート。国内外を代表するクラブ等でプレイ。エヴァンゲリオン主題歌「残酷な天使のテーゼ」のEnglish
+                                ver.をEDMアレンジで世界同時リリースするなど、多岐にわたり活躍中。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card" data-aos="fade-up">
+                        <div class="artist-img">
+                            <img
+                                src="https://placehold.co/600x800/111/FFF?text=PAST+IMAGE:\nAYANE"
+                                alt="AYANE"
+                            />
+                        </div>
+                        <div class="artist-info">
+                            <span class="artist-badge">PAST SPECIAL GUEST</span>
+                            <h3 class="artist-name">AYANE</h3>
+                            <div class="artist-profile">
+                                2002.8.21-
+                                関西出身。数々のオリジナル楽曲がSNSを中心に大注目を集めているシンガーソングライター。
+                                飾ることのない等身大の言葉を、高い歌唱力と自由度の高いパフォーマンスで自己発信し続ける次世代型アーティスト。7歳の頃からヴォーカルレッスンを始め、11歳で既にオリジナル曲の制作を始める。「bye
+                                bye」「Love
+                                U」「ごめんね」などの楽曲がSNSでティーンを中心にバズを起こしスマッシュヒットを連発。
+                                今後も令和版歌姫AYANEに各方面から注目が集まる！
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card" data-aos="fade-up">
+                        <div class="artist-img">
+                            <img
+                                src="https://placehold.co/600x800/111/FFF?text=PAST+IMAGE:\nMonomane+Stage"
+                                alt="倖田未来 / 安室奈美似"
+                            />
+                        </div>
+                        <div class="artist-info">
+                            <span class="artist-badge">PAST SPECIAL GUEST</span>
+                            <h3 class="artist-name">倖田未来 / 安室奈美似</h3>
+                            <div class="artist-profile">
+                                【倖田未来】
+                                めざましテレビでご本人と共演！倖田來未さんご本人公認のそっくりさんとして活動中ですが、昭和の芸風の早替わり芸人として歌謡曲から演歌まで様々なジャンルのものまねを全国各地でお届けしています。
+                                【安室奈美似】
+                                20歳の頃、安室奈美恵さんの「そっくりタレント」としてブレイク。「中森あきない」「安室奈美似」の芸名をもつ二刀流タレント。SNS総フォロワー数70万人を超える人気TikToker。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artist-card artist-card-cs" data-aos="fade-up">
+                        <h3>
+                            2026 GUESTS<br /><span
+                                style="color: var(--primary-color)"
+                                >COMING SOON</span
+                            >
+                        </h3>
+                        <p>2026年のスペシャルゲストは5月に第一弾発表予定！</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="schedule" data-aos="fade-up">
+                <h2 class="section-title">SCHEDULE 2026</h2>
+                <div class="schedule-tabs">
+                    <button
+                        class="schedule-tab-btn active"
+                        onclick="switchDay(1)"
+                    >
+                        7/18 (土) カラオケ/LIVE
+                    </button>
+                    <button class="schedule-tab-btn" onclick="switchDay(2)">
+                        7/19 (日) DANCE/DJ
+                    </button>
+                    <button class="schedule-tab-btn" onclick="switchDay(3)">
+                        7/20 (祝) 音楽祭
+                    </button>
+                </div>
+
+                <div id="schedule-day1" class="schedule-content active">
+                    <ul class="timetable">
+                        <li class="timetable-item">
+                            <div class="time">11:00 ～</div>
+                            <div class="event-title">
+                                キッズパプリカ & 1000個菓子まき
+                            </div>
+                            <div class="event-details">
+                                笑顔とふれあいが溢れる、思い出に残るひとときを！
+                            </div>
+                        </li>
+                        <li class="timetable-item">
+                            <div class="time">AFTERNOON</div>
+                            <div class="event-title">
+                                カラオケ大会 × DAM 第一興商 道南杯
+                            </div>
+                            <div class="event-details">
+                                テーマ：ダイナマイト歌の祭典
+                                ～DAMステージ道南チャンピオンシップ～
+                            </div>
+                        </li>
+                        <li
+                            class="timetable-item"
+                            style="border-color: var(--secondary-color)"
+                        >
+                            <div class="time">NIGHT</div>
+                            <div
+                                class="event-title"
+                                style="color: var(--secondary-color)"
+                            >
+                                SPECIAL LIVE STAGE [COMING SOON]
+                            </div>
+                            <div class="event-details">詳細は後日発表！</div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="schedule-day2" class="schedule-content">
+                    <ul class="timetable">
+                        <li class="timetable-item">
+                            <div class="time">ALL DAY</div>
+                            <div class="event-title">
+                                DANCE大会 × 中央薬局グループ杯
+                            </div>
+                            <div class="event-details">
+                                白熱のダンスバトル！
+                            </div>
+                        </li>
+                        <li
+                            class="timetable-item"
+                            style="border-color: var(--secondary-color)"
+                        >
+                            <div class="time">NIGHT</div>
+                            <div
+                                class="event-title"
+                                style="color: var(--secondary-color)"
+                            >
+                                DJ STAGE [COMING SOON]
+                            </div>
+                            <div class="event-details">熱狂のDJタイム</div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="schedule-day3" class="schedule-content">
+                    <ul class="timetable">
+                        <li class="timetable-item">
+                            <div class="time">AFTERNOON</div>
+                            <div class="event-title">
+                                北海道アーティストライブステージ
+                            </div>
+                            <div class="event-details">
+                                道内外のアーティストが大集結
+                            </div>
+                        </li>
+                        <li
+                            class="timetable-item"
+                            style="border-color: var(--secondary-color)"
+                        >
+                            <div class="time">NIGHT</div>
+                            <div
+                                class="event-title"
+                                style="color: var(--secondary-color)"
+                            >
+                                DYNAMITE MUSIC FESTA FINAL [COMING SOON]
+                            </div>
+                            <div class="event-details">感動のフィナーレ！</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- #8: チケット・入場情報セクション -->
+            <section id="ticket" data-aos="fade-up">
+                <h2 class="section-title">TICKET / ENTRY</h2>
+                <div class="ticket-grid">
+                    <div class="ticket-card">
+                        <div class="ticket-icon">🎪</div>
+                        <h3>入場料</h3>
+                        <div class="ticket-price">
+                            無料<small>（入場無料）</small>
+                        </div>
+                        <p>3日間すべて入場無料！気軽に足を運んでください。</p>
+                    </div>
+                    <div class="ticket-card">
+                        <div class="ticket-icon">🕐</div>
+                        <h3>開催時間</h3>
+                        <div class="ticket-price" style="font-size: 2rem">
+                            11:00<small>〜</small>21:00
+                        </div>
+                        <p>
+                            7月18日(土)・19日(日)・20日(月・祝)<br />3日間開催
+                        </p>
+                    </div>
+                    <div class="ticket-card">
+                        <div class="ticket-icon">🎤</div>
+                        <h3>コンテスト参加</h3>
+                        <div class="ticket-price" style="font-size: 1.6rem">
+                            要<small>エントリー</small>
+                        </div>
+                        <p>
+                            カラオケ・ダンス大会など各コンテストは事前エントリーが必要。詳細は募集開始時に発表！
+                        </p>
+                    </div>
+                </div>
+                <p class="ticket-note">
+                    ※グルメ・キッチンカーエリア（満パラ★フェス）は当日現金払い。<br />各コンテスト参加費は後日発表予定。
+                </p>
+            </section>
+
+            <section id="recruitment" data-aos="fade-up">
+                <h2 class="section-title">RECRUITMENT</h2>
+                <p style="text-align: center; color: #ccc; margin-bottom: 50px">
+                    ダイナマイトサマーフェス2026を一緒に盛り上げる仲間を募集します！
+                </p>
+
+                <div class="recruit-grid">
+                    <div class="recruit-card cs-overlay" data-aos="fade-up">
+                        <h3>出演者募集 (アーティスト・パフォーマー)</h3>
+                        <dl class="recruit-details">
+                            <dt>募集部門</dt>
+                            <dd>
+                                ①カラオケ部門（18日）<br />②ダンスバトル・コンテスト部門（19日）<br />③アーティストライブ部門（20日）
+                            </dd>
+                            <dt>応募資格</dt>
+                            <dd>
+                                音楽やダンスを愛し、一緒にフェスを盛り上げてくれる方。プロ・アマ・年齢・居住地は問いません。
+                            </dd>
+                            <dt>応募方法</dt>
+                            <dd>
+                                5月公開予定の専用エントリーフォームより、パフォーマンス動画URLを添えてご応募ください。
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div
+                        class="recruit-card cs-overlay"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <h3>満パラ★フェス (キッチンカー・飲食)募集</h3>
+                        <dl class="recruit-details">
+                            <dt>募集内容</dt>
+                            <dd>
+                                イベントを食で盛り上げるキッチンカー、飲食テント出店者。
+                            </dd>
+                            <dt>出店条件</dt>
+                            <dd>
+                                ・各種営業許可を取得していること<br />・イベントの主旨に賛同し、衛生管理を徹底できること<br />・3日間通し、または指定日数の出店が可能な方
+                            </dd>
+                            <dt>応募方法</dt>
+                            <dd>
+                                5月公開予定の出店要項をご確認の上、フォームよりお申し込みください。
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div
+                        class="recruit-card cs-overlay"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <h3>ボランティアスタッフ募集</h3>
+                        <dl class="recruit-details">
+                            <dt>活動内容</dt>
+                            <dd>
+                                会場設営・撤収、来場者誘導、エコステーション管理、本部運営補助など。
+                            </dd>
+                            <dt>参加特典</dt>
+                            <dd>
+                                ・オリジナルスタッフTシャツ支給<br />・イベント期間中の昼食支給<br />・最高の夏の思い出と仲間！
+                            </dd>
+                            <dt>応募資格</dt>
+                            <dd>高校生以上（※未成年は保護者の同意が必要）。</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <section id="photo" data-aos="fade-up">
+                <h2 class="section-title">PHOTO GALLERY</h2>
+                <p style="text-align: center; color: #ccc; margin-bottom: 50px">
+                    画像をクリックすると拡大表示されます。
+                </p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/333/FFF?text=GALLERY+1"
+                            alt="過去の様子1"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/444/FFF?text=GALLERY+2"
+                            alt="過去の様子2"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/555/FFF?text=GALLERY+3"
+                            alt="過去の様子3"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/666/FFF?text=GALLERY+4"
+                            alt="過去の様子4"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/777/FFF?text=GALLERY+5"
+                            alt="過去の様子5"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/888/FFF?text=GALLERY+6"
+                            alt="過去の様子6"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/333/FFF?text=GALLERY+7"
+                            alt="過去の様子7"
+                        />
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img
+                            src="https://placehold.co/400x300/444/FFF?text=GALLERY+8"
+                            alt="過去の様子8"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <section id="access" data-aos="fade-up">
+                <h2 class="section-title">ACCESS</h2>
+                <div
+                    style="
+                        background-color: var(--card-bg);
+                        padding: 40px;
+                        border-radius: 15px;
+                        text-align: center;
+                    "
+                >
+                    <p
+                        style="
+                            font-size: 1.5rem;
+                            color: var(--secondary-color);
+                            font-weight: bold;
+                        "
+                    >
+                        📍 はこだてグリーンプラザ
+                    </p>
+                    <p>北海道函館市松風町4</p>
+                    <!-- #6: Google Map iframe -->
+                    <div
+                        style="
+                            width: 100%;
+                            height: 400px;
+                            margin: 30px 0;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            border: 2px solid #333;
+                        "
+                    >
+                        <iframe
+                            src="https://maps.google.com/maps?q=北海道函館市松風町4&output=embed&hl=ja"
+                            width="100%"
+                            height="100%"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="はこだてグリーンプラザ アクセスマップ"
+                        >
+                        </iframe>
+                    </div>
+                    <a href="mailto:hdsf.jikko@gmail.com" class="btn"
+                        >お問い合わせ (hdsf.jikko@gmail.com)</a
+                    >
+                </div>
+            </section>
+        </div>
+
+        <!-- #12: 過去年度アーカイブ -->
+        <div class="archive-section">
+            <h3>PAST EVENTS</h3>
+            <div class="archive-links">
+                <a
+                    href="https://hakodate-summerfes.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="archive-link"
+                    >2025</a
+                >
+                <span class="archive-link">2024</span>
+                <span class="archive-link">2023</span>
+                <span class="archive-link">2022</span>
+            </div>
+        </div>
+
+        <footer>
+            <!-- #13: フッターLINEボタン -->
+            <div class="footer-line">
+                <a
+                    href="https://lin.ee/XXXXXXX"
+                    class="btn-line"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style="width: 20px; height: 20px; fill: white"
+                    >
+                        <path
+                            d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+                        />
+                    </svg>
+                    LINE 友達追加
+                </a>
+            </div>
+            <!-- #7: TikTok・Instagram・Xのみ（URL不明のYouTube・Spotifyは削除） -->
+            <div class="social-links">
+                <a
+                    href="https://www.tiktok.com/@dynamite_summer_fes"
+                    target="_blank"
+                    rel="noopener"
+                    >TikTok</a
+                >
+                <a
+                    href="https://www.instagram.com/dynamite_summer_fes/"
+                    target="_blank"
+                    rel="noopener"
+                    >Instagram</a
+                >
+                <a
+                    href="https://twitter.com/hakodate_sf"
+                    target="_blank"
+                    rel="noopener"
+                    >X (Twitter)</a
+                >
+            </div>
+            <p>
+                © 2026 ダイナマイトサマーフェス実行委員会. All Rights Reserved.
+            </p>
+        </footer>
+
+        <!-- #3: モーダル（visibility/opacityで制御） -->
+        <div
+            id="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="画像拡大"
+            onclick="closeModal()"
+        >
+            <button id="modal-close" aria-label="閉じる" onclick="closeModal()">
+                &times;
+            </button>
+            <img id="modal-img" src="" alt="拡大画像" />
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            // #11: AOS 初期化
+            AOS.init({ duration: 800, once: true, easing: "ease-out" });
+
+            // #10: ローダー — setTimeout 固定遅延を廃止、load イベントで即時非表示
+            window.addEventListener("load", () => {
+                document
+                    .getElementById("loader-wrapper")
+                    .classList.add("loaded");
+            });
+
+            // ヘッダースクロール処理
+            window.addEventListener("scroll", () => {
+                const header = document.querySelector("header");
+                header.classList.toggle("scrolled", window.scrollY > 50);
+            });
+
+            // Particles.js
+            if (document.getElementById("particles-js")) {
+                particlesJS("particles-js", {
+                    particles: {
+                        number: { value: 80 },
+                        color: { value: ["#ff4500", "#ffd700", "#ffffff"] },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.7, random: true },
+                        size: { value: 4, random: true },
+                        move: {
+                            enable: true,
+                            speed: 3,
+                            direction: "top",
+                            out_mode: "out",
+                        },
+                    },
+                });
+            }
+
+            // スケジュールタブ
+            function switchDay(day) {
+                document
+                    .querySelectorAll(".schedule-tab-btn")
+                    .forEach((btn, i) =>
+                        btn.classList.toggle("active", i === day - 1),
+                    );
+                document
+                    .querySelectorAll(".schedule-content")
+                    .forEach((c) => c.classList.remove("active"));
+                document
+                    .getElementById("schedule-day" + day)
+                    .classList.add("active");
+            }
+
+            // タイムテーブルアコーディオン
+            document.querySelectorAll(".timetable-item").forEach((item) => {
+                item.addEventListener("click", () =>
+                    item.classList.toggle("active"),
+                );
+            });
+
+            // #1: ハンバーガーメニュー
+            const hamburger = document.getElementById("hamburger");
+            const mobileNav = document.getElementById("mobileNav");
+
+            hamburger.addEventListener("click", () => {
+                const isOpen = mobileNav.classList.toggle("open");
+                hamburger.classList.toggle("open", isOpen);
+                hamburger.setAttribute("aria-expanded", String(isOpen));
+                document.body.style.overflow = isOpen ? "hidden" : "";
+            });
+
+            document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileNav.classList.remove("open");
+                    hamburger.classList.remove("open");
+                    hamburger.setAttribute("aria-expanded", "false");
+                    document.body.style.overflow = "";
+                });
+            });
+
+            // #3: フォトギャラリーモーダル
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+
+            function openModal(element) {
+                modalImg.src = element.querySelector("img").src;
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeModal() {
+                modal.classList.remove("active");
+                document.body.style.overflow = "";
+                setTimeout(() => {
+                    modalImg.src = "";
+                }, 300);
+            }
+
+            // Escape キーでモーダルを閉じる
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && modal.classList.contains("active"))
+                    closeModal();
+            });
+
+            // モーダル内の画像クリックで閉じないようにする
+            modalImg.addEventListener("click", (e) => e.stopPropagation());
+        </script>
+    </body>
+</html>
