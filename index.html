@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>BLASTWAVE SUMMER FES 2026 | 函館ダイナマイトサマーフェス</title>
+<meta name="viewport" content="width=1024" />
+<meta name="description" content="2026年7月18日〜20日 はこだてグリーンプラザB・Cブロックで開催。函館ダイナマイトサマーフェス2026公式サイト。入場無料！" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Caveat+Brush&family=Permanent+Marker&family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07090d;
+    --bg2:#0c0f15;
+    --ink:#f4f4f4;
+    --ink-dim:#b9b9b9;
+    --pink:#ff2b7a;
+    --magenta:#e6128a;
+    --cyan:#1ec3c7;
+    --teal:#14a3a8;
+    --yellow:#ffe21f;
+    --lime:#7dd13d;
+    --orange:#ff8a1f;
+    --blue:#1f6cff;
+    --paper:#f3efe3;
+    --paper2:#ece6d3;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;border:0;cursor:pointer}
+
+  /* ---------- placeholder system ---------- */
+  .ph{
+    --c1:#1a1d24; --c2:#22262f;
+    background:repeating-linear-gradient(135deg, var(--c1) 0 8px, var(--c2) 8px 16px);
+    position:relative;
+    color:#cfd3dc;
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;
+    letter-spacing:.05em;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    overflow:hidden;
+  }
+  .ph.paper{ --c1:#e6dfc8; --c2:#d9d1b6; color:#5a513a }
+  .ph.cyan{ --c1:#0c2a31; --c2:#10363f; color:#9be6ec }
+  .ph.pink{ --c1:#33060f; --c2:#400916; color:#ffb1cc }
+  .ph::after{ content:attr(data-label); padding:6px 10px; background:rgba(0,0,0,.35); border:1px dashed rgba(255,255,255,.25); border-radius:2px }
+  .ph.paper::after{ background:rgba(255,255,255,.4); border-color:rgba(0,0,0,.18) }
+
+  /* ---------- frame ---------- */
+  .page{
+    position:relative;
+    max-width:1200px;
+    margin:0 auto;
+    background:var(--bg);
+    overflow:hidden;
+  }
+  /* side palm-leaf strips */
+  .leaf{
+    position:absolute; top:0; bottom:0; width:120px;
+    background:
+      radial-gradient(ellipse 80px 240px at 30% 12%, #0aa5a0 0%, transparent 60%),
+      radial-gradient(ellipse 90px 260px at 70% 32%, #0d6e7a 0%, transparent 60%),
+      radial-gradient(ellipse 70px 200px at 20% 55%, #ff2b7a 0%, transparent 55%),
+      radial-gradient(ellipse 90px 220px at 80% 78%, #1f6cff 0%, transparent 55%),
+      radial-gradient(circle at 40% 90%, #ffe21f 0%, transparent 30%);
+    filter:blur(.4px) saturate(1.1);
+    opacity:.55;
+    pointer-events:none;
+    z-index:0;
+  }
+  .leaf.left{ left:0 }
+  .leaf.right{ right:0 }
+
+  /* ---------- header ---------- */
+  header.top{
+    position:sticky; top:0; z-index:100;
+    display:flex; align-items:center; gap:16px;
+    padding:10px 20px;
+    background:rgba(7,9,13,.92);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+    transition:box-shadow .3s;
+  }
+  header.top.scrolled{ box-shadow:0 2px 20px rgba(0,0,0,.6) }
+  .header-logo{
+    flex:0 0 auto;
+    display:flex; align-items:center; gap:10px;
+  }
+  .header-logo img{
+    height:44px; width:auto;
+  }
+  .logo-text{
+    font-family:"Bowlby One",sans-serif; line-height:1; color:#fff;
+    display:flex; flex-direction:column;
+  }
+  .logo-text .jp{
+    background:linear-gradient(180deg,#ffe21f,#ff8a1f 60%,#ff2b7a);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    font-size:15px; letter-spacing:.02em;
+  }
+  .logo-text .num{
+    background:linear-gradient(180deg,#1ec3c7,#1f6cff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    font-size:13px;
+  }
+  .logo-text .en{
+    font-family:"Bebas Neue",sans-serif; font-weight:400; font-size:8px;
+    color:#cfd3dc; letter-spacing:.18em; margin-top:1px;
+  }
+  nav.main{
+    display:flex; gap:16px; margin-left:6px; flex:1 1 auto;
+    font-family:"Bebas Neue",sans-serif; font-size:13px; letter-spacing:.14em;
+    white-space:nowrap;
+  }
+  nav.main a{ color:#fff; padding:6px 2px; border-bottom:2px solid transparent; transition:border-color .2s }
+  nav.main a:hover{ border-color:var(--pink) }
+  .top-cta{
+    margin-left:auto; display:flex; gap:10px; align-items:center;
+  }
+  .ticket-btn{
+    background:var(--pink); color:#fff;
+    font-family:"Bebas Neue",sans-serif; font-size:16px; letter-spacing:.16em;
+    padding:10px 22px; border-radius:2px; transition:background .2s;
+  }
+  .ticket-btn:hover{ background:var(--magenta) }
+  .menu-btn{
+    width:40px; height:40px; background:#fff; color:#000;
+    display:grid; place-items:center; border-radius:2px;
+    transition:background .2s;
+  }
+  .menu-btn:hover{ background:#e0e0e0 }
+  .menu-btn span{ display:block; width:18px; height:2px; background:#000; box-shadow:0 -6px 0 #000, 0 6px 0 #000; transition:.2s }
+  .menu-btn.open span{ box-shadow:none; background:transparent }
+  .menu-btn.open span::before,
+  .menu-btn.open span::after{
+    content:""; display:block; width:18px; height:2px; background:#000;
+    position:absolute; transition:.2s;
+  }
+  .menu-btn.open span::before{ transform:rotate(45deg) }
+  .menu-btn.open span::after{ transform:rotate(-45deg) }
+
+  /* mobile overlay menu */
+  .mobile-menu{
+    display:none; position:fixed; inset:0; z-index:200;
+    background:rgba(7,9,13,.97);
+    flex-direction:column; align-items:center; justify-content:center; gap:32px;
+    font-family:"Bebas Neue",sans-serif; font-size:32px; letter-spacing:.14em;
+  }
+  .mobile-menu.open{ display:flex }
+  .mobile-menu a{ color:#fff; border-bottom:2px solid transparent; padding:4px 8px; transition:border-color .2s }
+  .mobile-menu a:hover{ border-color:var(--pink) }
+  .mobile-menu-close{
+    position:absolute; top:20px; right:20px;
+    width:44px; height:44px; background:#fff; color:#000;
+    display:grid; place-items:center; border-radius:2px;
+    font-size:20px; cursor:pointer; border:0;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; z-index:1;
+    padding:0;
+    isolation:isolate;
+  }
+  .hero-stage{
+    position:relative;
+    height:640px;
+    overflow:hidden;
+    background:#000;
+  }
+  .hero-img{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 600px 260px at 50% 28%, rgba(255,180,80,.55), transparent 60%),
+      radial-gradient(ellipse 380px 200px at 22% 36%, rgba(255,90,140,.45), transparent 65%),
+      radial-gradient(ellipse 380px 200px at 78% 36%, rgba(120,180,255,.45), transparent 65%),
+      linear-gradient(180deg, #2a1a35 0%, #1a1430 22%, #0c0d1a 55%, #050507 100%);
+  }
+  .beams{
+    position:absolute; inset:0; pointer-events:none;
+    background:
+      conic-gradient(from 200deg at 50% 0%,
+        transparent 0deg,
+        rgba(255,210,120,.18) 8deg,
+        transparent 14deg,
+        rgba(255,90,160,.18) 22deg,
+        transparent 28deg,
+        rgba(120,200,255,.18) 38deg,
+        transparent 44deg,
+        rgba(255,210,120,.16) 54deg,
+        transparent 62deg);
+    mix-blend-mode:screen;
+    opacity:.85;
+    mask-image:linear-gradient(180deg, #000 0%, #000 55%, transparent 85%);
+    -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 55%, transparent 85%);
+  }
+  .confetti{
+    position:absolute; inset:0; pointer-events:none;
+    background-image:
+      radial-gradient(circle 2px at 12% 22%, #ffe21f 99%, transparent 100%),
+      radial-gradient(circle 2px at 28% 14%, #ff2b7a 99%, transparent 100%),
+      radial-gradient(circle 2px at 44% 8%, #1ec3c7 99%, transparent 100%),
+      radial-gradient(circle 2px at 62% 18%, #7dd13d 99%, transparent 100%),
+      radial-gradient(circle 2px at 78% 12%, #ffe21f 99%, transparent 100%),
+      radial-gradient(circle 2px at 88% 26%, #ff2b7a 99%, transparent 100%),
+      radial-gradient(circle 2px at 18% 42%, #1ec3c7 99%, transparent 100%),
+      radial-gradient(circle 2px at 36% 36%, #ffe21f 99%, transparent 100%),
+      radial-gradient(circle 2px at 56% 30%, #ff2b7a 99%, transparent 100%),
+      radial-gradient(circle 2px at 72% 38%, #7dd13d 99%, transparent 100%),
+      radial-gradient(circle 2px at 92% 44%, #ffe21f 99%, transparent 100%);
+    opacity:.85;
+  }
+  .crowd{
+    position:absolute; left:0; right:0; bottom:0; height:62%;
+    background:
+      radial-gradient(ellipse 4px 22px at 12% 52%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 26px at 18% 48%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 20px at 26% 54%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 28px at 34% 46%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 22px at 42% 52%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 30px at 50% 44%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 24px at 58% 50%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 26px at 66% 48%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 22px at 74% 52%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 28px at 82% 46%, #000 0 60%, transparent 70%),
+      radial-gradient(ellipse 4px 20px at 90% 54%, #000 0 60%, transparent 70%),
+      radial-gradient(circle 14px at 10% 62%, #000 0 60%, transparent 70%),
+      radial-gradient(circle 16px at 22% 60%, #050608 0 60%, transparent 70%),
+      radial-gradient(circle 14px at 32% 64%, #000 0 60%, transparent 70%),
+      radial-gradient(circle 18px at 44% 58%, #060708 0 60%, transparent 70%),
+      radial-gradient(circle 14px at 56% 62%, #000 0 60%, transparent 70%),
+      radial-gradient(circle 16px at 68% 60%, #050608 0 60%, transparent 70%),
+      radial-gradient(circle 14px at 80% 64%, #000 0 60%, transparent 70%),
+      radial-gradient(circle 16px at 92% 60%, #050608 0 60%, transparent 70%),
+      radial-gradient(ellipse 200px 80px at 10% 82%, #000 0 50%, transparent 70%),
+      radial-gradient(ellipse 220px 90px at 30% 88%, #050608 0 50%, transparent 70%),
+      radial-gradient(ellipse 240px 100px at 50% 84%, #000 0 50%, transparent 70%),
+      radial-gradient(ellipse 220px 90px at 70% 88%, #060708 0 50%, transparent 70%),
+      radial-gradient(ellipse 200px 80px at 90% 82%, #000 0 50%, transparent 70%),
+      linear-gradient(180deg, transparent 0%, rgba(0,0,0,.85) 50%, #000 75%);
+  }
+  .lights{
+    position:absolute; left:0; right:0; top:0; height:65%;
+    background:
+      radial-gradient(circle 130px at 18% 18%, rgba(255,220,150,.85), transparent 70%),
+      radial-gradient(circle 110px at 82% 14%, rgba(150,200,255,.75), transparent 70%),
+      radial-gradient(circle 80px at 50% 6%, rgba(255,180,200,.7), transparent 70%),
+      radial-gradient(circle 60px at 32% 24%, rgba(255,210,120,.6), transparent 70%),
+      radial-gradient(circle 60px at 68% 24%, rgba(180,220,255,.6), transparent 70%);
+    filter:blur(3px);
+    mix-blend-mode:screen;
+  }
+  .hero-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.35) 70%, rgba(0,0,0,.65) 100%);
+  }
+  .hero-content{
+    position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+    z-index:5; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    padding:0 60px;
+    pointer-events:none;
+  }
+  .hero-title-img{
+    width:760px; max-width:92%; height:auto;
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,.6));
+    margin:0 auto;
+    display:block;
+  }
+  .hero-en{
+    font-family:"Bebas Neue",sans-serif;
+    color:#fff; font-size:22px; letter-spacing:.22em;
+    text-shadow:2px 2px 0 #000;
+    margin-top:-4px;
+  }
+  .hero-date{
+    font-family:"Bebas Neue",sans-serif;
+    font-size:28px; letter-spacing:.04em; color:#fff;
+    text-shadow:2px 2px 0 #000;
+  }
+  .hero-date .sm{ font-size:18px; vertical-align:2px; margin:0 4px }
+  .hero-date .dash{ margin:0 10px; color:var(--pink) }
+  .hero-place{
+    margin-top:8px; font-size:15px; color:#fff;
+    text-shadow:1px 1px 0 #000;
+  }
+  .hero-free{
+    display:inline-block; margin-top:14px;
+    background:var(--yellow); color:#1a1300;
+    font-weight:900; font-size:18px; letter-spacing:.1em;
+    padding:10px 32px; border-radius:2px;
+    box-shadow:3px 3px 0 #000;
+  }
+
+  /* paint splatters across hero */
+  .splash{
+    position:absolute; pointer-events:none; z-index:2;
+    width:160px; height:160px; border-radius:50%;
+    filter:blur(.3px);
+  }
+  .splash svg{ width:100%; height:100% }
+
+  /* ---------- generic section ---------- */
+  section{ position:relative; z-index:2; padding:50px 60px }
+  .section-head{
+    display:flex; align-items:center; gap:24px; margin-bottom:24px;
+  }
+  .section-title{
+    font-family:"Permanent Marker","Caveat Brush",cursive;
+    font-weight:400;
+    font-size:62px; line-height:.9;
+    letter-spacing:.02em;
+    padding:6px 14px 6px 38px;
+    position:relative;
+    transform:skewX(-8deg);
+    text-shadow:0 2px 0 rgba(0,0,0,.35);
+  }
+  .section-title::before{
+    content:"";
+    position:absolute; left:0; top:50%; transform:translateY(-50%);
+    width:46px; height:46px;
+    background:
+      radial-gradient(circle 12px at 50% 50%, currentColor 0 60%, transparent 70%),
+      radial-gradient(circle 4px at 18% 28%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 3px at 86% 22%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 5px at 14% 78%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 3px at 84% 76%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 2px at 6% 50%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 2px at 94% 50%, currentColor 0 70%, transparent 80%);
+  }
+  .section-title.pink{ color:var(--pink) }
+  .section-title.cyan,
+  .section-title.teal{ color:#1ec3c7 }
+  .section-title.yellow{ color:var(--yellow) }
+  .section-title.lime{ color:var(--lime) }
+  .section-title.white{ color:#fff }
+  .more{
+    font-family:"Noto Sans JP",sans-serif; font-size:13px;
+    color:#fff; border:1px solid #fff; padding:8px 22px; border-radius:0;
+    letter-spacing:.05em;
+    white-space:nowrap;
+    transition:background .2s, color .2s;
+  }
+  .more:hover{ background:#fff; color:#000 }
+
+  /* ---------- NEWS ---------- */
+  .news{
+    background:linear-gradient(180deg,#f5f0e0,#ece6d3);
+    color:#222;
+    margin:0 60px;
+    padding:28px 36px;
+    position:relative;
+    z-index:3;
+    box-shadow:0 0 0 1px rgba(0,0,0,.06);
+  }
+  .news .section-head{ margin-bottom:14px }
+  .news .section-title{ color:var(--pink); font-size:48px; padding-right:14px }
+  .news .section-title::before{ background:
+      radial-gradient(circle 10px at 50% 50%, currentColor 0 60%, transparent 70%),
+      radial-gradient(circle 4px at 18% 28%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 3px at 86% 22%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 5px at 14% 78%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 3px at 84% 76%, currentColor 0 70%, transparent 80%);
+  }
+  .news .more{ color:#222; border-color:#222 }
+  .news .more:hover{ background:#222; color:#fff }
+  .news ul{ list-style:none; padding:0; margin:0; border-top:1px dashed #aaa }
+  .news li{
+    display:grid; grid-template-columns:120px 1fr auto;
+    gap:18px; align-items:center;
+    padding:12px 4px; border-bottom:1px dashed #aaa;
+    font-size:13px;
+  }
+  .news .date{ font-family:"JetBrains Mono",monospace; color:#555 }
+  .news .ttl a{ color:#0b5fb0; text-decoration:underline; text-underline-offset:3px }
+  .news .new{
+    background:var(--pink); color:#fff; font-family:"Bebas Neue",sans-serif;
+    font-size:11px; padding:2px 8px; letter-spacing:.1em; border-radius:1px;
+  }
+
+  /* ---------- ARTIST ---------- */
+  .artist{ padding-top:60px }
+  .artist-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  }
+  .artist-card{ position:relative; aspect-ratio:1/1; overflow:hidden; cursor:pointer }
+  .artist-card .ph{ position:absolute; inset:0 }
+  .artist-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+  .artist-card .name{
+    position:absolute; left:8px; right:60px; bottom:8px;
+    font-family:"Bebas Neue",sans-serif; font-size:16px; letter-spacing:.08em;
+    color:#fff; text-shadow:1px 1px 0 #000;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .artist-card .day{
+    position:absolute; right:0; bottom:0;
+    background:var(--pink); color:#fff;
+    font-family:"Bebas Neue",sans-serif; font-size:14px;
+    padding:6px 10px; line-height:1.05;
+    text-align:center; min-width:46px;
+  }
+  .artist-card .day.sat{ background:var(--pink) }
+  .artist-card .day.sun{ background:var(--cyan) }
+  .artist-card .day.mon{ background:var(--yellow); color:#1a1300 }
+  .artist-card .day .d{ display:block; font-size:18px }
+
+  /* ---------- TIME TABLE ---------- */
+  .tt-tabs{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px }
+  .tt-tab{ background:#fff; color:#222; padding:0; overflow:hidden }
+  .tt-tab h3{
+    margin:0; font-family:"Bebas Neue",sans-serif; font-size:24px;
+    text-align:center; padding:10px; letter-spacing:.06em; color:#fff;
+  }
+  .tt-tab.sat h3{ background:var(--pink) }
+  .tt-tab.sun h3{ background:var(--cyan) }
+  .tt-tab.mon h3{ background:var(--yellow); color:#1a1300 }
+  .tt-tab table{ width:100%; border-collapse:collapse; font-size:11px; color:#222 }
+  .tt-tab th{
+    font-family:"Bebas Neue",sans-serif; letter-spacing:.08em; font-size:11px;
+    padding:8px 4px; border-bottom:1px solid #eee; color:#222; font-weight:400;
+  }
+  .tt-tab td{
+    padding:6px 4px; border-bottom:1px solid #f1f1f1; vertical-align:middle;
+    text-align:center;
+  }
+  .tt-tab td.h{ font-family:"JetBrains Mono",monospace; color:#888; width:48px; text-align:left; padding-left:10px }
+  .slot{
+    background:var(--pink); color:#fff;
+    font-family:"Bebas Neue",sans-serif; letter-spacing:.05em;
+    padding:6px 4px; font-size:11px; border-radius:1px;
+  }
+  .tt-tab.sun .slot{ background:var(--cyan) }
+  .tt-tab.mon .slot{ background:var(--yellow); color:#1a1300 }
+  .slot.dim{ background:#f4d6e2; color:#8a3457 }
+  .tt-tab.sun .slot.dim{ background:#cbe9eb; color:#1f6f73 }
+  .tt-tab.mon .slot.dim{ background:#fff5b8; color:#7a6500 }
+
+  /* ---------- TICKET ---------- */
+  .ticket-block{ margin-top:36px }
+  .ticket-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+  }
+  .ticket-row{
+    background:#0e1218; border:1px solid #1c222d; padding:14px 18px;
+    display:grid; grid-template-columns:1fr auto; align-items:center;
+  }
+  .ticket-row .ttl{
+    font-family:"Bebas Neue",sans-serif; font-size:22px; letter-spacing:.06em;
+  }
+  .ticket-row .sub{ font-size:11px; color:#8d96a5; margin-top:2px }
+  .ticket-row .price{ font-family:"Bebas Neue",sans-serif; font-size:26px; letter-spacing:.04em }
+  .ticket-row.t1 .ttl{ color:var(--cyan) }
+  .ticket-row.t2 .ttl{ color:var(--pink) }
+  .ticket-row.t3 .ttl{ color:var(--yellow) }
+  .ticket-buy{
+    margin-top:6px; text-align:center;
+  }
+  .ticket-buy .lead{
+    font-family:"Caveat Brush",cursive; font-size:18px; color:#fff; letter-spacing:.04em;
+  }
+  .ticket-buy .btn{
+    display:block; background:var(--pink); color:#fff;
+    font-family:"Bebas Neue",sans-serif; font-size:18px; letter-spacing:.1em;
+    padding:14px; margin-top:8px; text-align:center;
+    transition:background .2s;
+  }
+  .ticket-buy .btn:hover{ background:var(--magenta) }
+
+  /* ---------- AREA MAP + FOOD ---------- */
+  .am-row{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:10px }
+  .map-frame{ aspect-ratio:16/9 }
+  .food-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:1fr 1fr;
+    gap:6px; aspect-ratio:16/9;
+  }
+  .food-grid .ph{ width:100%; height:100% }
+  .food-grid .more-tile{
+    grid-column:3; grid-row:2;
+    background:#000; color:#fff;
+    font-family:"Caveat Brush",cursive; font-size:28px;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- 出演者募集 ---------- */
+  .recruit-head{
+    display:flex; align-items:center; gap:14px; margin:30px 0 14px;
+  }
+  .recruit-head .jp{ font-family:"Noto Sans JP"; font-size:18px; font-weight:700; color:#ff5b9a }
+  .recruit-head .sub{ font-family:"Caveat Brush",cursive; font-size:22px; color:#fff }
+  .recruit-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+  }
+  .recruit-card{
+    border-radius:40px; padding:14px 18px;
+    display:grid; grid-template-columns:50px 1fr auto; align-items:center; gap:12px;
+    color:#fff; font-weight:700;
+  }
+  .recruit-card.dance{ background:var(--pink) }
+  .recruit-card.sing{ background:var(--orange) }
+  .recruit-card.food{ background:var(--lime) }
+  .recruit-card .icon{
+    width:50px; height:50px; border-radius:50%; background:#fff;
+    display:grid; place-items:center; color:#222;
+    font-family:"Bebas Neue",sans-serif; font-size:18px;
+  }
+  .recruit-card .apply{
+    background:#fff; color:#222; font-size:12px; padding:8px 14px;
+    font-weight:700; border-radius:2px; cursor:pointer;
+    transition:background .2s;
+  }
+  .recruit-card .apply:hover{ background:#e8e8e8 }
+
+  /* ---------- MOVIE / GALLERY / 過去のHP ---------- */
+  .mg-row{
+    display:grid; grid-template-columns:1fr 1.3fr 1fr; gap:24px; align-items:flex-start;
+    margin-top:14px;
+  }
+  .movie-frame{
+    aspect-ratio:16/10; position:relative; overflow:hidden;
+  }
+  .play{
+    position:absolute; inset:0; display:grid; place-items:center;
+  }
+  .play .pbtn{
+    width:54px; height:54px; border-radius:50%;
+    background:rgba(255,255,255,.85); display:grid; place-items:center;
+    transition:background .2s, transform .2s; cursor:pointer;
+  }
+  .play .pbtn:hover{ background:#fff; transform:scale(1.1) }
+  .play .pbtn::after{
+    content:""; border:11px solid transparent; border-left:18px solid #222;
+    margin-left:6px;
+  }
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:6px;
+  }
+  .gallery-grid .ph{ aspect-ratio:1/1 }
+  .past-list{ background:transparent }
+  .past-list .row{
+    display:grid; grid-template-columns:1fr auto; align-items:center;
+    background:#fff; color:#222;
+    padding:11px 14px; margin-bottom:6px; font-size:13px;
+    cursor:pointer; transition:background .2s;
+  }
+  .past-list .row:hover{ background:#f0f0f0 }
+  .past-list .row::after{ content:"›"; color:#aaa; font-size:18px }
+
+  /* small section heads */
+  .small-head{ display:flex; align-items:center; gap:14px; margin-bottom:14px }
+  .small-head .t{
+    font-family:"Permanent Marker","Caveat Brush",cursive;
+    font-size:42px; line-height:.9;
+    transform:skewX(-8deg);
+    padding:4px 8px 4px 32px;
+    position:relative;
+  }
+  .small-head .t::before{
+    content:"";
+    position:absolute; left:0; top:50%; transform:translateY(-50%);
+    width:34px; height:34px;
+    background:
+      radial-gradient(circle 9px at 50% 50%, currentColor 0 60%, transparent 70%),
+      radial-gradient(circle 3px at 18% 28%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 2px at 86% 22%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 4px at 14% 78%, currentColor 0 70%, transparent 80%),
+      radial-gradient(circle 2px at 84% 76%, currentColor 0 70%, transparent 80%);
+  }
+  .small-head .more{ font-size:12px; padding:6px 14px }
+  .past-head{ color:#fff; font-weight:700; font-size:14px }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ margin-top:0 }
+  .faq-item{
+    border-bottom:1px solid #1c222d;
+  }
+  .faq-q{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:18px 0; cursor:pointer;
+    font-size:15px; font-weight:700; color:#fff;
+    list-style:none;
+  }
+  .faq-q::-webkit-details-marker{ display:none }
+  .faq-q .qi{ flex:0 0 auto; font-family:"Bebas Neue",sans-serif; font-size:22px; color:var(--pink); margin-right:8px }
+  .faq-q .qa-arrow{
+    flex:0 0 auto; width:24px; height:24px; border-radius:50%;
+    background:rgba(255,255,255,.1); display:grid; place-items:center;
+    font-size:16px; transition:transform .3s;
+  }
+  details[open] .faq-q .qa-arrow{ transform:rotate(180deg) }
+  .faq-a{
+    padding:0 0 18px 30px; font-size:14px; color:var(--ink-dim); line-height:1.8;
+  }
+
+  /* ---------- banner row ---------- */
+  .banners{
+    display:grid; grid-template-columns:1fr 1.4fr 1fr; gap:0;
+    margin-top:30px;
+  }
+  .banner{
+    position:relative; padding:22px 24px; min-height:170px;
+    display:flex; flex-direction:column; justify-content:center;
+    overflow:hidden;
+  }
+  .banner.fan{
+    background:linear-gradient(90deg,#ffd91f,#ff8a1f);
+    color:#1a1300;
+  }
+  .banner.fan h4{
+    font-family:"Bowlby One",sans-serif; font-size:28px; margin:0 0 4px;
+    color:#1a1300;
+  }
+  .banner.fan p{ margin:0; font-size:11px; line-height:1.6 }
+  .banner.fan .cta{
+    align-self:flex-start; margin-top:10px; background:var(--pink); color:#fff;
+    font-family:"Bebas Neue",sans-serif; font-size:13px; letter-spacing:.1em;
+    padding:8px 18px; transition:background .2s;
+  }
+  .banner.fan .cta:hover{ background:var(--magenta) }
+  .banner.join{
+    background:#0e1014;
+  }
+  .banner.join h4{
+    font-family:"Bowlby One",sans-serif; font-size:30px; margin:0; color:#fff;
+    letter-spacing:.04em;
+  }
+  .banner.join p{ margin:6px 0 0; font-size:11px; color:#cfd3dc; line-height:1.6 }
+  .banner.join .cta{
+    align-self:flex-start; margin-top:10px; background:#fff; color:#000;
+    font-family:"Bebas Neue",sans-serif; font-size:12px; letter-spacing:.1em;
+    padding:7px 16px; transition:background .2s;
+  }
+  .banner.join .cta:hover{ background:#e0e0e0 }
+  .banner.join .ph{
+    position:absolute; right:0; top:0; bottom:0; width:55%;
+  }
+  .banner.ad{
+    background:linear-gradient(90deg,#1aa0c8,#1f6cff);
+    color:#fff;
+  }
+  .banner.ad h4{
+    font-family:"Noto Sans JP",sans-serif; font-weight:900; font-size:20px; margin:0;
+  }
+  .banner.ad p{ font-size:11px; margin:6px 0 0; line-height:1.6 }
+  .banner.ad .cta{
+    align-self:flex-start; margin-top:10px; background:#fff; color:#000;
+    font-size:12px; padding:7px 16px; transition:background .2s;
+  }
+  .banner.ad .cta:hover{ background:#e0e0e0 }
+
+  /* ---------- sponsor logos ---------- */
+  .sponsors{
+    background:#fff; color:#222;
+    padding:30px 60px;
+    display:grid; grid-template-columns:repeat(8,1fr); gap:18px 26px;
+    align-items:center;
+  }
+  .sponsor{
+    display:flex; align-items:center; justify-content:center;
+    height:34px;
+    color:#222; font-weight:700; font-size:13px;
+    letter-spacing:.04em;
+    font-family:"Bebas Neue",sans-serif;
+    text-align:center;
+  }
+  .sponsor .dot{
+    display:inline-block; width:10px; height:10px; border-radius:50%;
+    background:#e10026; margin-right:6px;
+  }
+  .sponsor .sq{
+    display:inline-block; width:10px; height:10px;
+    background:#0bbf4f; margin-right:6px;
+  }
+
+  /* ---------- footer ---------- */
+  footer.bot{
+    background:#0a0c11; color:#cfd3dc;
+    padding:18px 60px;
+    display:grid; grid-template-columns:1fr auto auto; gap:24px;
+    align-items:center;
+    font-size:12px;
+  }
+  footer.bot .brand{
+    font-family:"Bowlby One",sans-serif; font-size:15px;
+    background:linear-gradient(90deg,#ff2b7a,#1ec3c7);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  footer.bot .legal{ display:flex; gap:14px }
+  footer.bot .legal a:hover{ color:#fff }
+  footer.bot .social{ display:flex; gap:14px; align-items:center; font-family:"Bebas Neue",sans-serif; letter-spacing:.16em }
+  footer.bot .social .ic{
+    width:22px; height:22px; border:1px solid #cfd3dc; display:grid; place-items:center;
+    border-radius:3px; font-size:11px; transition:border-color .2s, color .2s;
+  }
+  footer.bot .social .ic:hover{ border-color:#fff; color:#fff }
+  .copyright{ background:#070809; color:#7a8090; text-align:left; font-size:11px; padding:10px 60px; font-family:"JetBrains Mono",monospace }
+
+  /* ---------- back-to-top ---------- */
+  .btt{
+    position:fixed; bottom:28px; right:28px; z-index:50;
+    width:44px; height:44px; background:var(--pink); color:#fff;
+    display:grid; place-items:center; border-radius:2px;
+    font-size:20px; opacity:0; pointer-events:none;
+    transition:opacity .3s;
+    border:0; cursor:pointer;
+  }
+  .btt.visible{ opacity:1; pointer-events:auto }
+  .btt:hover{ background:var(--magenta) }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- decorative side leaves -->
+  <div class="leaf left" aria-hidden="true"></div>
+  <div class="leaf right" aria-hidden="true"></div>
+
+  <!-- top header -->
+  <header class="top" id="site-header">
+    <div class="header-logo">
+      <img src="assets/dynamite-logo.png" alt="ダイナマイトサマーフェス" />
+      <div class="logo-text">
+        <span class="jp">函館ダイナマイト</span>
+        <span class="num">サマーフェス 2026</span>
+        <span class="en">dynamite SUMMER FES 2026</span>
+      </div>
+    </div>
+    <nav class="main" aria-label="メインナビゲーション">
+      <a href="#top">TOP</a>
+      <a href="#news">NEWS</a>
+      <a href="#artist">ARTIST</a>
+      <a href="#tt">TIME TABLE</a>
+      <a href="#ticket">TICKET</a>
+      <a href="#area">AREA MAP</a>
+      <a href="#food">FOOD</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="top-cta">
+      <a class="ticket-btn" href="#ticket">TICKET</a>
+      <button class="menu-btn" id="menu-btn" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <!-- mobile overlay menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="モバイルメニュー">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="メニューを閉じる">✕</button>
+    <a href="#top"      class="mobile-menu-link">TOP</a>
+    <a href="#news"     class="mobile-menu-link">NEWS</a>
+    <a href="#artist"   class="mobile-menu-link">ARTIST</a>
+    <a href="#tt"       class="mobile-menu-link">TIME TABLE</a>
+    <a href="#ticket"   class="mobile-menu-link">TICKET</a>
+    <a href="#area"     class="mobile-menu-link">AREA MAP</a>
+    <a href="#food"     class="mobile-menu-link">FOOD</a>
+    <a href="#faq"      class="mobile-menu-link">FAQ</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top" style="padding:0">
+    <div class="hero-stage">
+      <div class="hero-img"></div>
+      <div class="beams"></div>
+      <div class="lights"></div>
+      <div class="confetti"></div>
+      <div class="crowd"></div>
+      <div class="hero-overlay"></div>
+
+      <!-- paint splatters -->
+      <span class="splash" style="left:6%; top:30%; width:120px; height:120px;" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="#ff2b7a"/><circle cx="20" cy="20" r="6" fill="#ff2b7a"/><circle cx="82" cy="14" r="4" fill="#ff2b7a"/><circle cx="88" cy="78" r="9" fill="#ff2b7a"/></svg>
+      </span>
+      <span class="splash" style="right:8%; top:18%; width:140px; height:140px;" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="55" cy="50" r="30" fill="#1ec3c7"/><circle cx="14" cy="60" r="7" fill="#1ec3c7"/><circle cx="86" cy="22" r="5" fill="#1ec3c7"/></svg>
+      </span>
+      <span class="splash" style="left:22%; bottom:8%; width:110px; height:110px;" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="48" cy="50" r="28" fill="#ffe21f"/><circle cx="14" cy="14" r="5" fill="#ffe21f"/><circle cx="86" cy="80" r="7" fill="#ffe21f"/></svg>
+      </span>
+      <span class="splash" style="right:18%; bottom:6%; width:100px; height:100px;" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="52" cy="50" r="26" fill="#7dd13d"/><circle cx="18" cy="78" r="5" fill="#7dd13d"/><circle cx="82" cy="20" r="6" fill="#7dd13d"/></svg>
+      </span>
+
+      <div class="hero-content">
+        <img class="hero-title-img" src="assets/title-logo.png" alt="ダイナマイトサマーフェス 2026" />
+        <div class="hero-en">DYNAMITE SUMMER FES 2026</div>
+        <div class="hero-date">
+          2026.07.18 <span class="sm">SAT</span><span class="dash">–</span>07.20 <span class="sm">MON</span>
+        </div>
+        <div class="hero-place">はこだてグリーンプラザ B・Cブロック</div>
+        <div class="hero-free">入場無料</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section style="padding:36px 0" aria-labelledby="news-heading">
+    <div class="news" id="news">
+      <div class="section-head">
+        <div class="section-title pink" id="news-heading">NEWS</div>
+        <a class="more" href="#">一覧を見る</a>
+      </div>
+      <ul>
+        <li>
+          <span class="date">2026.05.01</span>
+          <span class="ttl"><a href="#">公式サイトを公開しました！</a></span>
+          <span class="new">NEW</span>
+        </li>
+        <li>
+          <span class="date">2026.04.28</span>
+          <span class="ttl"><a href="#">第1弾アーティスト発表！チケット先行発売スタート！</a></span>
+          <span class="new">NEW</span>
+        </li>
+        <li>
+          <span class="date">2026.04.10</span>
+          <span class="ttl">ブラストウェイブサマーフェス2026 開催決定！</span>
+          <span></span>
+        </li>
+        <li>
+          <span class="date">2026.03.22</span>
+          <span class="ttl">出演者・ボランティアスタッフ募集を開始しました</span>
+          <span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ARTIST -->
+  <section class="artist" id="artist" aria-labelledby="artist-heading">
+    <div class="section-head">
+      <div class="section-title pink" id="artist-heading">ARTIST</div>
+      <a class="more" href="#">もっと見る</a>
+    </div>
+    <div class="artist-grid">
+      <div class="artist-card">
+        <div class="ph pink" data-label="ARTIST PORTRAIT 01"></div>
+        <div class="name">SAYA HOSHINO</div>
+        <div class="day sat"><span>7.18</span><span class="d">SAT</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph" data-label="ARTIST PORTRAIT 02"></div>
+        <div class="name">NEON PARADE</div>
+        <div class="day sat"><span>7.18</span><span class="d">SAT</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph" data-label="ARTIST PORTRAIT 03"></div>
+        <div class="name">KAITO MORI</div>
+        <div class="day sat"><span>7.18</span><span class="d">SAT</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph" data-label="ARTIST PORTRAIT 04"></div>
+        <div class="name">RIVERSIDE 9</div>
+        <div class="day sun"><span>7.19</span><span class="d">SUN</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph" data-label="ARTIST PORTRAIT 05"></div>
+        <div class="name">tokyo orange</div>
+        <div class="day sun"><span>7.19</span><span class="d">SUN</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph cyan" data-label="ARTIST PORTRAIT 06"></div>
+        <div class="name">YUKI - K</div>
+        <div class="day sun"><span>7.19</span><span class="d">SUN</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph" data-label="ARTIST PORTRAIT 07"></div>
+        <div class="name">SUNSET CRUISERS</div>
+        <div class="day mon"><span>7.20</span><span class="d">MON</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph pink" data-label="ARTIST PORTRAIT 08"></div>
+        <div class="name">AOI &amp; THE WAVES</div>
+        <div class="day mon"><span>7.20</span><span class="d">MON</span></div>
+      </div>
+      <div class="artist-card">
+        <div class="ph cyan" data-label="ARTIST PORTRAIT 09"></div>
+        <div class="name">HARBOR LIGHTS</div>
+        <div class="day mon"><span>7.20</span><span class="d">MON</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME TABLE -->
+  <section id="tt" aria-labelledby="tt-heading">
+    <div class="section-head">
+      <div class="section-title pink" id="tt-heading">TIME TABLE</div>
+      <a class="more" href="#">タイムテーブルを見る</a>
+    </div>
+    <div class="tt-tabs">
+      <!-- SAT -->
+      <div class="tt-tab sat">
+        <h3>7.18 SAT</h3>
+        <table>
+          <thead>
+            <tr><th></th><th>MAIN</th><th>ISLAND</th><th>SUNSET</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="h">11:00</td><td></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">13:00</td><td></td><td><div class="slot dim">ARTIST</div></td><td></td></tr>
+            <tr><td class="h">14:30</td><td><div class="slot">SAYA HOSHINO</div></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">16:00</td><td></td><td><div class="slot dim">ARTIST</div></td><td></td></tr>
+            <tr><td class="h">17:30</td><td><div class="slot">KAITO MORI</div></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">19:00</td><td><div class="slot">NEON PARADE</div></td><td></td><td></td></tr>
+            <tr><td class="h">20:30</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- SUN -->
+      <div class="tt-tab sun">
+        <h3>7.19 SUN</h3>
+        <table>
+          <thead>
+            <tr><th></th><th>MAIN</th><th>ISLAND</th><th>SUNSET</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="h">11:00</td><td></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">13:00</td><td></td><td><div class="slot">tokyo orange</div></td><td></td></tr>
+            <tr><td class="h">14:30</td><td><div class="slot dim">ARTIST</div></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">16:00</td><td></td><td><div class="slot dim">ARTIST</div></td><td></td></tr>
+            <tr><td class="h">17:30</td><td><div class="slot">YUKI - K</div></td><td></td><td></td></tr>
+            <tr><td class="h">19:00</td><td><div class="slot">RIVERSIDE 9</div></td><td></td><td></td></tr>
+            <tr><td class="h">20:30</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- MON -->
+      <div class="tt-tab mon">
+        <h3>7.20 MON</h3>
+        <table>
+          <thead>
+            <tr><th></th><th>MAIN</th><th>ISLAND</th><th>SUNSET</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="h">11:00</td><td></td><td><div class="slot dim">ARTIST</div></td><td></td></tr>
+            <tr><td class="h">13:00</td><td><div class="slot dim">ARTIST</div></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">14:30</td><td></td><td><div class="slot">HARBOR LIGHTS</div></td><td></td></tr>
+            <tr><td class="h">16:00</td><td><div class="slot dim">ARTIST</div></td><td></td><td><div class="slot dim">ARTIST</div></td></tr>
+            <tr><td class="h">17:30</td><td><div class="slot">AOI &amp; THE WAVES</div></td><td></td><td></td></tr>
+            <tr><td class="h">19:00</td><td><div class="slot">SUNSET CRUISERS</div></td><td></td><td></td></tr>
+            <tr><td class="h">20:30</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TICKET (paired with timetable) -->
+    <div class="ticket-block" id="ticket">
+      <div class="section-head">
+        <div class="section-title pink" style="font-size:48px" id="ticket-heading">TICKET</div>
+        <a class="more" href="#">チケット情報を見る</a>
+      </div>
+      <div class="ticket-grid">
+        <div class="ticket-row t1">
+          <div>
+            <div class="ttl">3DAYS TICKET</div>
+            <div class="sub">3日通し券</div>
+          </div>
+          <div class="price">¥24,800</div>
+        </div>
+        <div class="ticket-row t2">
+          <div>
+            <div class="ttl">1DAY TICKET</div>
+            <div class="sub">1日券</div>
+          </div>
+          <div class="price">¥10,800</div>
+        </div>
+      </div>
+      <div class="ticket-buy" style="margin-top:14px">
+        <div class="lead">＼ オフィシャル先行発売中！／</div>
+        <a class="btn" href="#">チケットを購入する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA MAP + FOOD -->
+  <section id="area" aria-label="エリアマップとフード">
+    <div class="am-row">
+      <div>
+        <div class="section-head">
+          <div class="section-title teal">AREA MAP</div>
+          <a class="more" href="#">マップを見る</a>
+        </div>
+        <div class="ph cyan map-frame" data-label="VENUE MAP — illustrated park layout"></div>
+      </div>
+      <div id="food">
+        <div class="section-head">
+          <div class="section-title teal">FOOD</div>
+          <a class="more" href="#">フード情報を見る</a>
+        </div>
+        <div class="food-grid">
+          <div class="ph paper" data-label="BURGER"></div>
+          <div class="ph paper" data-label="FRIES + NACHOS"></div>
+          <div class="ph paper" data-label="SHAVED ICE"></div>
+          <div class="ph paper" data-label="YAKITORI"></div>
+          <div class="ph paper" data-label="CRAFT DRINK"></div>
+          <div class="more-tile">and more!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 出演者募集 -->
+  <section style="padding-top:10px" aria-label="出演者募集">
+    <div class="recruit-head">
+      <span class="jp">出演者募集</span>
+      <span class="sub">一緒にフェスをつくろう！</span>
+    </div>
+    <div class="recruit-grid">
+      <div class="recruit-card dance">
+        <div class="icon" aria-hidden="true">★</div>
+        <div>ダンス</div>
+        <a class="apply" href="#">応募する</a>
+      </div>
+      <div class="recruit-card sing">
+        <div class="icon" aria-hidden="true">♪</div>
+        <div>歌うま選手権</div>
+        <a class="apply" href="#">応募する</a>
+      </div>
+      <div class="recruit-card food">
+        <div class="icon" aria-hidden="true">🍽</div>
+        <div>フード出店者</div>
+        <a class="apply" href="#">応募する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIE / GALLERY / 過去のHP -->
+  <section aria-label="動画・ギャラリー・過去のHP">
+    <div class="mg-row">
+      <div>
+        <div class="small-head">
+          <span class="t" style="color:var(--cyan)">MOVIE</span>
+          <a class="more" href="#">動画を見る</a>
+        </div>
+        <div class="ph movie-frame" data-label="HIGHLIGHT REEL">
+          <div class="play"><button class="pbtn" aria-label="動画を再生する"></button></div>
+        </div>
+      </div>
+      <div>
+        <div class="small-head">
+          <span class="t" style="color:var(--pink)">GALLERY</span>
+          <a class="more" href="#">ギャラリーを見る</a>
+        </div>
+        <div class="gallery-grid">
+          <div class="ph" data-label="GALLERY 01"></div>
+          <div class="ph" data-label="GALLERY 02"></div>
+          <div class="ph" data-label="GALLERY 03"></div>
+          <div class="ph" data-label="GALLERY 04"></div>
+          <div class="ph" data-label="GALLERY 05"></div>
+          <div class="ph" data-label="GALLERY 06"></div>
+        </div>
+      </div>
+      <div>
+        <div class="small-head">
+          <span class="past-head">過去のHP</span>
+          <a class="more" href="#" style="margin-left:auto">一覧を見る</a>
+        </div>
+        <div class="past-list">
+          <div class="row" tabindex="0">ダイナマイトサマーフェス2025</div>
+          <div class="row" tabindex="0">ダイナマイトサマーフェス2024</div>
+          <div class="row" tabindex="0">ダイナマイトサマーフェス2023</div>
+          <div class="row" tabindex="0">ダイナマイトサマーフェス2022</div>
+          <div class="row" tabindex="0">ダイナマイトサマーフェス2021</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="section-head">
+      <div class="section-title yellow" id="faq-heading">FAQ</div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span><span class="qi">Q.</span>入場は無料ですか？</span>
+          <span class="qa-arrow">▾</span>
+        </summary>
+        <div class="faq-a">はい、会場への入場は無料です。ただしステージエリアへの入場にはチケットが必要です。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span><span class="qi">Q.</span>会場への交通アクセスは？</span>
+          <span class="qa-arrow">▾</span>
+        </summary>
+        <div class="faq-a">函館駅から徒歩約10分。シャトルバスも運行予定です。詳細はアクセスページをご確認ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span><span class="qi">Q.</span>雨天の場合は開催しますか？</span>
+          <span class="qa-arrow">▾</span>
+        </summary>
+        <div class="faq-a">小雨決行、荒天中止です。中止の場合は公式SNSおよびウェブサイトにて告知いたします。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span><span class="qi">Q.</span>チケットの払い戻しはできますか？</span>
+          <span class="qa-arrow">▾</span>
+        </summary>
+        <div class="faq-a">イベント中止の場合を除き、購入済みチケットの払い戻しはできません。あらかじめご了承ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span><span class="qi">Q.</span>子供は入場できますか？</span>
+          <span class="qa-arrow">▾</span>
+        </summary>
+        <div class="faq-a">お子様も入場可能です。小学生以下は保護者同伴でお願いします。ステージエリアは年齢制限はありませんが、安全のためご注意ください。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- banners -->
+  <section style="padding:0 0 40px">
+    <div class="banners" style="margin:0 60px">
+      <div class="banner fan">
+        <h4>FAN CLUB</h4>
+        <p>ダイナマイトサマーフェス公式ファンクラブ。<br>会員限定のチケット先行やオリジナル<br>コンテンツ＆特典がたくさん。</p>
+        <a class="cta" href="#">今すぐ入会する</a>
+      </div>
+      <div class="banner join">
+        <div class="ph" data-label="STAFF PHOTO"></div>
+        <div style="position:relative; z-index:2; max-width:55%">
+          <h4>JOIN BWF</h4>
+          <p>ボランティア・スタッフ募集中！<br>一緒にフェスをつくろう！</p>
+          <a class="cta" href="#">詳しくはこちら</a>
+        </div>
+      </div>
+      <div class="banner ad">
+        <h4>広告協賛募集</h4>
+        <p>一緒にフェスを盛り上げませんか？<br>企業・団体様向けの協賛プランをご用意しています。</p>
+        <a class="cta" href="#">詳しくはこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- sponsors -->
+  <div class="sponsors" aria-label="スポンサー">
+    <div class="sponsor"><span class="dot" aria-hidden="true"></span>SOUNDWORKS</div>
+    <div class="sponsor">FamilyMart+</div>
+    <div class="sponsor">チケットぴあ</div>
+    <div class="sponsor">ぴあ</div>
+    <div class="sponsor">e-PLUS</div>
+    <div class="sponsor">楽天チケット</div>
+    <div class="sponsor">ロッピー</div>
+    <div class="sponsor">ZAIKO+</div>
+
+    <div class="sponsor">PONYCANYON</div>
+    <div class="sponsor">avex</div>
+    <div class="sponsor">SPACE SHOWER TV</div>
+    <div class="sponsor">FM 84.6</div>
+    <div class="sponsor">FM 802</div>
+    <div class="sponsor">FM COCOLO</div>
+    <div class="sponsor">ZIP-FM</div>
+    <div class="sponsor">interfm</div>
+
+    <div class="sponsor"><span class="sq" aria-hidden="true"></span>kiss FM</div>
+    <div class="sponsor">J:COM+</div>
+    <div class="sponsor">BASE</div>
+    <div class="sponsor">HALOS BALPHatch</div>
+    <div class="sponsor">BIGCAT</div>
+    <div class="sponsor">UNITED STAGE</div>
+    <div class="sponsor">ホテルみなと</div>
+    <div class="sponsor">みなとアイランド</div>
+  </div>
+
+  <footer class="bot">
+    <div class="brand">函館ダイナマイトサマーフェス2026</div>
+    <nav class="legal" aria-label="フッターリンク">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+    <div class="social">
+      FOLLOW US
+      <a class="ic" href="#" aria-label="X (Twitter)">X</a>
+      <a class="ic" href="#" aria-label="Instagram">IG</a>
+      <a class="ic" href="#" aria-label="YouTube">YT</a>
+    </div>
+  </footer>
+  <div class="copyright">© DYNAMITE-STYLE TRIBUTE — BWF 2026 All Rights Reserved.</div>
+
+</div><!-- /.page -->
+
+<!-- back-to-top -->
+<button class="btt" id="btt" aria-label="ページトップに戻る">↑</button>
+
+<script>
+(function(){
+  /* sticky header shadow */
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 10);
+    document.getElementById('btt').classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+
+  /* back-to-top */
+  document.getElementById('btt').addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* mobile menu */
+  var menuBtn  = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var closeBtn = document.getElementById('mobile-menu-close');
+
+  function openMenu(){
+    mobileMenu.classList.add('open');
+    menuBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    mobileMenu.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  }
+  menuBtn.addEventListener('click', function(){
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  closeBtn.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-menu-link').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+  mobileMenu.addEventListener('click', function(e){
+    if(e.target === mobileMenu) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
+})();
+</script>
+</body>
+</html>
